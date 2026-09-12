@@ -19,6 +19,8 @@ class Point2D:
         return self.squared_length() ** 0.5
     def __eq__(self,other):
         return self.x == other.x and self.y == other.y
+    def __getitem__(self, key):
+        return [self.x, self.y][key]
 
     def squared_length(self):
         '''Retorna o comprimento do vetor ao quadrado
