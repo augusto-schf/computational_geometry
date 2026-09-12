@@ -14,7 +14,7 @@ def find_next_point(now, points):
     for p in points: # itera os pontos
         # caso o novo ponto esteja a esquerda do atual-candidato,
         # atualiza o candidato por ele
-        if orientation(now, candidate, p) < 0 or candidate == now:
+        if orientation(now, candidate, p) > 0 or candidate == now:
             candidate = p
 
     return candidate
