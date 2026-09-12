@@ -11,8 +11,14 @@ def orientation(a : Point2D, b : Point2D, p : Point2D):
 
     returns:
         int : Representando o seguinte:
-           -1 = esquerda
-            0 = dentro
-            1 = direita
+            < 0 : esquerda
+            = 0 : dentro
+            > 0 : direita
+            e o seu módulo representa a distância da reta
     '''
-    pass
+
+    ab = b - a
+    ap = p - a
+
+    result = ab[0] * ap[1] - ab[1] * ap[0]
+    return result
