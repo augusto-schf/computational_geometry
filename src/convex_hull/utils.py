@@ -1,6 +1,12 @@
 import matplotlib.pyplot as plt
 
 def plot_convex_hull(points, hull):
+    '''Plota fechos convexos dado os pontos iniciais e o resultado final
+
+    args:
+        list [Point2D] : Pontos iniciais onde o fecho é buscado
+        list [Point2D] : A lista final com os pontos do fecho convexo
+    '''
     x, y = zip(*[(p.x, p.y) for p in points])
     hx, hy = zip(*[(p.x, p.y) for p in hull] + [(hull[0].x, hull[0].y)])
 
