@@ -50,3 +50,11 @@ Augusto Schaefer Huff, discente no curso de graduação no IMPA Tech
 
 #### Orientador:
 Prof. Dr. Emílio Vital Brazil
+
+## Referências
+
+1. **Convex hull algorithms.** Wikipedia, The Free Encyclopedia. Disponível em: <https://en.wikipedia.org/wiki/Convex_hull_algorithms>. Acesso em: 13 set. 2026.
+
+2. **Convex hull.** Wikipedia, The Free Encyclopedia. Disponível em: <https://en.wikipedia.org/wiki/Convex_hull>. Acesso em: 13 set. 2026.
+3. 
+4. FIGUEIREDO, Luiz Henrique de; CARVALHO, Paulo Cezar Pinto. **Notas de Geometria Computacional.** Instituto de Matemática Pura e Aplicada (IMPA), 2005. Versão preliminar para uso pessoal, texto atualizado em 7 de março de 2005.
