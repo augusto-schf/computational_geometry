@@ -21,7 +21,8 @@ class Point2D:
         return self.x == other.x and self.y == other.y
     def __getitem__(self, key):
         return [self.x, self.y][key]
-
+    def __hash__(self):
+        return hash((self.x,self.y))
     def squared_length(self):
         '''Retorna o comprimento do vetor ao quadrado
 
