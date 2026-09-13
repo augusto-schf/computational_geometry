@@ -4,8 +4,8 @@ from math import atan2
 
 def run(points = random_points2D(10)):
     # variáveis ambiente necessárias
-    points = sorted(points, key = lambda p : (p.x, p.y))
-
+    points = sorted(list(set(points)), key = lambda p : (p.x, p.y))
+    print(points)
     p0 = points[0]
     remaining = [p for p in points if p != p0]
     upper_bound = [p0]
