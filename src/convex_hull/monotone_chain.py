@@ -16,7 +16,6 @@ def run(points = random_points2D(10)):
             upper_bound.pop()
         upper_bound.append(p)
 
-    rpoints = reversed(points)
     p0 = points[0]
     remaining = [p for p in points if p != p0]
     lower_bound = [p0]
