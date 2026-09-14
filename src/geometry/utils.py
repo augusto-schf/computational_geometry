@@ -14,6 +14,7 @@ def random_points2D(n = 1, min_x = -100, max_x = 100, min_y = -100, max_y = 100)
     returns:
         list [Point2D] : Retorna uma lista com todos os pontos gerados
     '''
+    
     points = []
     for i in range(n):
         points.append(Point2D(uniform(min_x, max_x), uniform(min_x, max_x)))
