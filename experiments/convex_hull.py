@@ -1,7 +1,7 @@
 # teste de casos degenerados
 #
 
-nome_do_algoritmo = "graham_scan"
+nome_do_algoritmo = "monotone_chain"
 plot_all = False
 #
 
@@ -57,4 +57,5 @@ from experiments.utils import test_perfomance
 def test_run(n):
     p = random_points2D(n)
     return run(p)
-test_perfomance(test_run, name=nome_do_algoritmo)
+
+test_perfomance(test_run, n_max=5000,name=nome_do_algoritmo)

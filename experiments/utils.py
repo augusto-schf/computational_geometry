@@ -14,7 +14,7 @@ def save_csv_data(name, data):
     with open(f"results/{name}_{tempo}.csv", "w", encoding="utf-8") as arquivo:
         arquivo.write(data)
 
-def test_perfomance(func, n_min=4, n_max = 1000, name='nao_providenciado'):
+def test_perfomance(func, n_min = 4, n_max = 1001, name='nao_providenciado'):
     results = []
 
     for n in range(n_min, n_max):
