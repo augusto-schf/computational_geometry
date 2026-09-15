@@ -1,6 +1,43 @@
 from datetime import datetime
 from time import perf_counter
+from pathlib import Path
+import matplotlib.pyplot as plt
+import numpy as np
 
+def parse_csv_file(name): # reimporta arquivo .csv baseado no nome
+    folder = Path("results")
+    files = folder.glob("*.csv") # busca o primeiro arquivo que contém o nome
+    for file in files:
+        if name.lower() in file.stem.lower():
+            with open(file, "r", encoding="utf-8") as arquivo:
+                lines = arquivo.readlines()
+                data = list(map(lambda l : l.replace(' ', '').split('|'), lines))
+                return data
+
+def plot_csv_data(data, interval=50, fit_curve=True, curve_func=lambda x : x * np.log(x)):
+    x = np.array([float(c[1]) for c in data[::50]])
+    y = np.array([float(c[2]) for c in data[::50]])
+
+    mean = np.mean(y)
+    std = np.std(y) # tira a média e o desvio padrão
+
+    mask = np.abs(y - mean) < 5 * std ## mascara para filtrar os dados que estão entre 3 sigmas da média
+
+    x = x[mask]
+    y = y[mask]
+
+    z = curve_func(x) # fita a curva baseado nos dados coletados experimentalmente
+    a, b = np.polyfit(z, y, 1)
+    y_nlogn = a * z + b
+
+    plt.scatter(x,y, label="Dados") # plota ambas as curvas, a dos dados e a fitada
+    plt.plot(x,y_nlogn, color="red", label=r"Curva Fitada")
+    plt.grid()
+
+    plt.legend()
+    plt.show()
+
+plot_csv_data(parse_csv_file("gift_wrapping"))
 def save_csv_data(name, data):
     '''Salva dados em .CSV
 

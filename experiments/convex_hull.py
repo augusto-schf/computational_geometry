@@ -58,4 +58,4 @@ def test_run(n):
     p = random_points2D(n)
     return run(p)
 
-test_perfomance(test_run, n_max=5000,name=nome_do_algoritmo)
+test_perfomance(test_run, n_max=2500,name=nome_do_algoritmo)
