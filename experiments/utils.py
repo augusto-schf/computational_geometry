@@ -14,16 +14,26 @@ def save_csv_data(name, data):
     with open(f"results/{name}_{tempo}.csv", "w", encoding="utf-8") as arquivo:
         arquivo.write(data)
 
-def test_perfomance(func, n_min = 4, n_max = 1001, name='nao_providenciado'):
+def test_perfomance(func, n_min = 4, n_max = 1000, name='nao_providenciado'):
+    '''Testa a performance de algum algoritmo e salva em um .CSV dados
+    sobre o tempo de execução do algoritmo dado algum N
+
+    args:
+        function : uma função para testar o desempenho, ela deve receber
+        um argumento N representando o tamanho N do problema/algoritmo
+        int : representa o N mínimo para o teste, o padrão é 4
+        int : represenat o N máximo para o teste, o padrão é 1000
+        string : o nome do arquivo para salvar na pasta /results/
+    '''
     results = []
 
-    for n in range(n_min, n_max):
+    for n in range(n_min, n_max+1):
         start = perf_counter()
-        func(n)
+        func(n) # executa a função e salva o tempo de execução
         end = perf_counter()
         dt = end-start
 
         results.append(f"{name:^15} | {n:^10} | {dt:^15.10f}")
-        print(results[-1])
+        print(results[-1]) # salva e printa o resultado
 
-    save_csv_data(name, '\n'.join(results))
+    save_csv_data(name, '\n'.join(results)) # salva como .CSV na pasta /results/
