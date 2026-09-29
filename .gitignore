@@ -1,5 +1,6 @@
 # my gitignore stuff
 results/*.csv
+teste.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

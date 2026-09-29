@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def plot_convex_hull(points, hull):
+def plot_convex_hull(points, hull, optional=[]):
     '''Plota fechos convexos dado os pontos iniciais e o resultado final
 
     args:
@@ -19,6 +19,10 @@ def plot_convex_hull(points, hull):
 
     for i, p in enumerate(hull):
         plt.annotate(str(i), (p.x, p.y))
+
+    if optional:
+        zx, zy = zip(*[(p.x, p.y) for p in optional])
+        plt.plot(zx, zy, color='red')
 
     plt.axis("equal")
     plt.show()
