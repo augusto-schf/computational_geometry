@@ -1,5 +1,5 @@
 # Geometria Computacional
-Repositório dedicado ao estudo de Geometria Computacional e de seus algoritmos e métodos principais, no contexto de uma Iniciação Científica de Estudo Orientado.
+Repositório dedicado ao estudo de Geometria Computacional e de seus algoritmos e métodos principais, no contexto de uma Iniciação Científica de Tema de Estudo Dirigido.
 
 ## Objetivos
 - Estudar fudamentos de complexidade e geometria computacional;
@@ -19,7 +19,10 @@ Repositório dedicado ao estudo de Geometria Computacional e de seus algoritmos 
     - Jarvis March (Gift Wrapping) - $O(nh)$
     - Graham Scan - $O(nlogn)$
     - Andrew's Monotone Chain - $O(nlogn)$
-- Localização de Pontos
+    - Optimização usando remoção de pontos
+- Pares Mais Próximos (closest pair)
+    - Algoritmo Brute-Force - $O(n^2)$
+    - Divide and Conquer - $O(nlogn)$
 
 ## Estrutura
 ```text
@@ -29,15 +32,15 @@ Repositório dedicado ao estudo de Geometria Computacional e de seus algoritmos 
 ├── .gitignore
 │
 ├── docs/   -- Documentos de markdown
-│   ├── notas/
-│   ├── referencias.md
-│   └── diario.md
+│   └── convex_hull/
 │
 ├── src/    -- Códigos implementados
 │   ├── geometry/
+│   ├── closest_pair/
 │   └── convex_hull/
 │
 ├── experiments/ -- Experimentos com os códigos
+│   ├── utils/
 │   └── convex_hull/
 
 └── results/  -- Resultados e dados coletados
