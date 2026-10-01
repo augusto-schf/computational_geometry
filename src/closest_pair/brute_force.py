@@ -1,10 +1,12 @@
 from src.geometry.utils import random_points2D
 
 def run(points):
+    # define a primeira distância sendo a ótima
     min_distance = points[0].distance_to_squared(points[1])
     point_a = points[0]
     point_b = points[1]
 
+    # checa todos possíveis pares em busca do melhor
     for p in points:
         for p_ in points:
             if p == p_:

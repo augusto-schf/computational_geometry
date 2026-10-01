@@ -10,6 +10,7 @@ def optimize(points):
     bottom = points[0]
 
     # O(n)
+    # defino o ponto mais a esq, mais a dir, mais embaixo e mais em cima
     for p in points:
         if p.x < left.x or p.x == left.x and p.y > left.y:
             left = p
