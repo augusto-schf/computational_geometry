@@ -17,4 +17,4 @@ def run(points):
                 point_b = p_
                 min_distance = p.distance_to_squared(p_)
 
-    return (min_distance**0.5, point_a, point_b)
+    return min_distance**0.5, (point_a, point_b)
