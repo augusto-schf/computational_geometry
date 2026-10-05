@@ -75,7 +75,7 @@ class Point2D:
         returns:
             float : Equivale a distância entre os dois pontos no plano
         '''
-        return Point2D.distance_squared(p1,p2)
+        return Point2D.distance_squared(p1,p2)**0.5
     @staticmethod
     def distance_squared(p1,p2): # mais eficiente
         '''Determina a distância euclidiana ao quadrado entre dois pontos
