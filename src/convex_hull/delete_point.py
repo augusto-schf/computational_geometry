@@ -18,7 +18,7 @@ def optimize(points):
         if p.x > right.x or p.x == right.x and p.y > right.y:
             right = p
 
-        if p.y > up.y or p.y == left.y and p.x < up.x:
+        if p.y > up.y or p.y == up.y and p.x < up.x:
             up = p
 
         if p.y < bottom.y or p.y == bottom.y and p.x < bottom.x:

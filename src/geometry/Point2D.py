@@ -16,7 +16,7 @@ class Point2D:
     def __repr__(self):
         return f"Point2D({self.x}, {self.y})"
     def __len__(self):
-        return self.squared_length() ** 0.5
+        return 2
     def __eq__(self,other):
         return self.x == other.x and self.y == other.y
     def __getitem__(self, key):
@@ -62,7 +62,15 @@ class Point2D:
             o comprimento e o ângulo respectivamente.
         '''
         return (len(self), arctan2(self.y,self.x))
-    
+
+    def norm(self):
+        '''Retorna o comprimento do ponto/vetor
+        
+        returns:
+            float : o comprimento
+        '''
+        return self.squared_length()**0.5
+
     # métodos estáticos que funcionam sem instância
     @staticmethod
     def distance(p1,p2):

@@ -17,7 +17,7 @@ def random_points2D(n = 1, min_x = -100, max_x = 100, min_y = -100, max_y = 100)
     
     points = []
     for i in range(n):
-        points.append(Point2D(uniform(min_x, max_x), uniform(min_x, max_x)))
+        points.append(Point2D(uniform(min_y, max_x), uniform(min_y, max_x)))
     return points
 
 def orientation(a : Point2D, b : Point2D, p : Point2D):

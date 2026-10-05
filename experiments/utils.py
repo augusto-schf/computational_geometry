@@ -15,8 +15,8 @@ def parse_csv_file(name): # reimporta arquivo .csv baseado no nome
                 return data
 
 def plot_csv_data(data, interval=50, fit_curve=True, curve_func=lambda x : x * np.log(x)):
-    x = np.array([float(c[1]) for c in data[::50]])
-    y = np.array([float(c[2]) for c in data[::50]])
+    x = np.array([float(c[1]) for c in data[::interval]])
+    y = np.array([float(c[2]) for c in data[::interval]])
 
     mean = np.mean(y)
     std = np.std(y) # tira a média e o desvio padrão
