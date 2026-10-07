@@ -66,5 +66,8 @@ def run(points):
                     else:
                         continue
                     break
+            else:
+                continue
+            break
 
     return delta, pair
