@@ -1,7 +1,7 @@
 # teste de casos degenerados
 #
 
-nome_do_algoritmo = "brute_force"
+nome_do_algoritmo = "floor_grid"
 plot_all = False
 #
 
@@ -19,4 +19,4 @@ def test_run(n):
     p = random_points2D(n)
     return run(p)
 
-test_perfomance(test_run, n_max=2000,name=nome_do_algoritmo)
+test_perfomance(test_run, n_max=200,name=nome_do_algoritmo, plot=True)

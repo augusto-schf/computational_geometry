@@ -37,7 +37,6 @@ def plot_csv_data(data, interval=50, fit_curve=True, curve_func=lambda x : x * n
     plt.legend()
     plt.show()
 
-plot_csv_data(parse_csv_file("gift_wrapping"))
 def save_csv_data(name, data):
     '''Salva dados em .CSV
 
@@ -51,7 +50,7 @@ def save_csv_data(name, data):
     with open(f"results/{name}_{tempo}.csv", "w", encoding="utf-8") as arquivo:
         arquivo.write(data)
 
-def test_perfomance(func, n_min = 4, n_max = 1000, name='nao_providenciado'):
+def test_perfomance(func, n_min = 4, n_max = 1000, name='nao_providenciado', plot=False):
     '''Testa a performance de algum algoritmo e salva em um .CSV dados
     sobre o tempo de execução do algoritmo dado algum N
 
@@ -59,18 +58,31 @@ def test_perfomance(func, n_min = 4, n_max = 1000, name='nao_providenciado'):
         function : uma função para testar o desempenho, ela deve receber
         um argumento N representando o tamanho N do problema/algoritmo
         int : representa o N mínimo para o teste, o padrão é 4
-        int : represenat o N máximo para o teste, o padrão é 1000
+        int : representa o N máximo para o teste, o padrão é 1000
         string : o nome do arquivo para salvar na pasta /results/
+        bool (False) : se o gráfico de tempo será plotado ou não
     '''
     results = []
 
-    for n in range(n_min, n_max+1):
-        start = perf_counter()
-        func(n) # executa a função e salva o tempo de execução
-        end = perf_counter()
-        dt = end-start
+    x = []
+    y = []
 
+    k = 300
+
+    for n in range(n_min, n_max+1):
+        dt = 0
+        for i in range(k):
+            start = perf_counter()
+            func(n) # executa a função e salva o tempo de execução
+            end = perf_counter()
+            dt = end-start
+        dt /= k
         results.append(f"{name:^15} | {n:^10} | {dt:^15.10f}")
         print(results[-1]) # salva e printa o resultado
+        x.append(n)
+        y.append(dt)
 
+    if plot:
+        plt.plot(x,y)
+        plt.show()
     save_csv_data(name, '\n'.join(results)) # salva como .CSV na pasta /results/
