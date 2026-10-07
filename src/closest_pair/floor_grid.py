@@ -61,11 +61,14 @@ def run(points):
                             delta = dis
                             pair = (p_0,p_1)
                             break
-
+    
                     # quebra os loops aninhados
                     else:
                         continue
                     break
+                else:
+                    continue
+                break
             else:
                 continue
             break
