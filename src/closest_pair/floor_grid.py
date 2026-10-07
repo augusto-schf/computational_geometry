@@ -8,11 +8,14 @@ def create_dict (points, delta):
     #adiciona cada ponto na sua célula correspondente
     for p in points:
         coords_in_grid = (floor(p.x / delta), floor(p.y / delta))
-        grid.get(coords_in_grid, []).append(p)
+        grid.setdefault(coords_in_grid, []).append(p)
 
     return grid
 
 def run(points):
+    if len(points) < 2:
+        return 0
+
     # remove pontos duplicados
     points = list(set(points))
     # embaralha os pontos
@@ -21,6 +24,9 @@ def run(points):
     delta = points[0].distance_to(points[1])
     pair = (points[0], points[1])
 
+    if len(points) == 2:
+        return delta, pair
+    
     changed = True
 
     while changed:
@@ -55,4 +61,4 @@ def run(points):
                             delta = dis
                             pair = (p_0,p_1)
 
-        return delta, pair
+    return delta, pair
